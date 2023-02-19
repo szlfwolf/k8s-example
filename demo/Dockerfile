@@ -6,7 +6,7 @@ RUN yum clean all && yum makecache
 
 RUN yum install -y openssh-server sudo
 RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
-RUN yum  install -y openssh-clients
+RUN yum  install -y openssh-clients net-tools
 
 RUN echo "root:qwe123" | chpasswd
 RUN echo "root   ALL=(ALL)       ALL" >> /etc/sudoers
